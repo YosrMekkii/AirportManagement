@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,10 @@ namespace AM.ApplicationCore.Domain
 {
     public class Plane
     {
+        [Range(50, 500, ErrorMessage = "La capacité doit être comprise entre 50 et 500.")]
         public int Capacity { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime ManufactureDate { get; set; }
         public int PlaneId { get; set; }
         public PlaneType PlaneType { get; set; }
